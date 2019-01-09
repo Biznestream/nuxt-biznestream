@@ -1,0 +1,18 @@
+{
+  "name": "@biznestream/nuxt-base",
+  "version": "1.0.0",
+  "description": "Base module for nuxt project",
+  "author": "Vitalii Savchuk <esvit666@gmail.com>",
+  "private": true,
+  "dependencies": {
+    "@nuxtjs/auth": "^4.5.3",
+    "@nuxtjs/axios": "^5.3.6",
+    "nuxt": "^2.3.4",
+    "nuxt-class-component": "^1.2.1",
+    "vue-class-component": "^6.3.2",
+    "vue-property-decorator": "^7.2.0",
+    "vuetify": "^1.4.0"
+  },
+  "devDependencies": {
+  }
+}
