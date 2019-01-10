@@ -4,11 +4,7 @@
   "description": "Base module for nuxt project",
   "author": "Vitalii Savchuk <esvit666@gmail.com>",
   "private": true,
-  "main": "dist/index.js",
-  "module": "src/index.js",
-  "scripts": {
-    "build": "ncp src dist && babel dist\\index.js  --out-file dist\\index.js && babel dist\\plugins\\encryption.js  --out-file dist\\plugins\\encryption.js && babel dist\\mixins\\auth.js  --out-file dist\\mixins\\auth.js"
-  },
+  "main": "index.js",
   "dependencies": {
     "@nuxtjs/auth": "^4.5.3",
     "@nuxtjs/axios": "^5.3.6",
@@ -17,17 +13,5 @@
     "vue-class-component": "^6.3.2",
     "vue-property-decorator": "^7.2.0",
     "vuetify": "^1.4.0"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.2.2",
-    "@babel/plugin-proposal-class-properties": "^7.2.3",
-    "@babel/plugin-proposal-decorators": "^7.2.3",
-    "@babel/plugin-transform-modules-commonjs": "^7.2.0",
-    "@babel/preset-env": "^7.2.3",
-    "babel-loader": "^8.0.5",
-    "ncp": "^2.0.0",
-    "vue-loader": "^15.5.1",
-    "vue-template-compiler": "^2.5.21"
   }
 }
