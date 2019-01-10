@@ -1,6 +1,6 @@
 {
   "name": "@biznestream/nuxt-base",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Base module for nuxt project",
   "author": "Vitalii Savchuk <esvit666@gmail.com>",
   "private": true,

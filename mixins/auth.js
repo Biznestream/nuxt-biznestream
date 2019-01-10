@@ -1,6 +1,6 @@
 const BIZNESTREAM_NAMESPACE = 'bzstrm';
 
-export default {
+module.exports = {
   data: () => {
     return {
       loginError: null,
