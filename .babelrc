@@ -1,6 +1,6 @@
 {
   "presets": [
-    ["@babel/env", { "modules": false,"targets": {
+    ["@babel/env", { "targets": {
       "node": "current" // or '7.10.0'
     } }]
   ],

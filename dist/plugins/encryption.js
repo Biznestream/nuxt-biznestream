@@ -1,10 +1,28 @@
-import Vue from 'vue';
-import masterPasswordRequest from './encryption/masterPasswordRequest.vue';
-import forgotPrompt from './encryption/forgotPrompt.vue';
-import * as authModule from './store/auth';
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _vue = _interopRequireDefault(require("vue"));
+
+var _masterPasswordRequest = _interopRequireDefault(require("./encryption/masterPasswordRequest.vue"));
+
+var _forgotPrompt = _interopRequireDefault(require("./encryption/forgotPrompt.vue"));
+
+var authModule = _interopRequireWildcard(require("./store/auth"));
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 const BIZNESTREAM_NAMESPACE = 'bzstrm';
-const MasterPasswordRequestDialog = Vue.extend(masterPasswordRequest);
-const ForgotPromptDialog = Vue.extend(forgotPrompt);
+
+const MasterPasswordRequestDialog = _vue.default.extend(_masterPasswordRequest.default);
+
+const ForgotPromptDialog = _vue.default.extend(_forgotPrompt.default);
+
 let crypto = window.crypto || window.msCrypto;
 let atob = window.atob;
 let btoa = window.btoa;
@@ -190,7 +208,7 @@ const EVENT_CHANGE_MASTER_KEY = 'changeKey';
 
 class Cryptozoa {
   constructor(app) {
-    this.eventBus = new Vue();
+    this.eventBus = new _vue.default();
     this.app = app;
 
     if (localStorage.masterKey) {
@@ -270,14 +288,16 @@ class Cryptozoa {
 
 }
 
-export default (({
+var _default = ({
   app,
   store
 }, inject) => {
   authModule.namespaced = true;
   store.registerModule(BIZNESTREAM_NAMESPACE, authModule);
   inject('encryption', new Cryptozoa(app));
-});
+};
+
+exports.default = _default;
 
 function convertStringToArrayBufferView(str) {
   const bytes = new Uint8Array(str.length);

@@ -1,3 +1,10 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = SimpleModule;
+
 const {
   resolve
 } = require('path');
@@ -14,7 +21,8 @@ const authCallbackRoute = {
   chunkName: 'auth',
   component: resolve(__dirname, './pages/callback.vue')
 };
-export default function SimpleModule(moduleOptions) {
+
+function SimpleModule(moduleOptions) {
   this.addPlugin({
     src: resolve(__dirname, './plugins/encryption.js'),
     ssr: false
