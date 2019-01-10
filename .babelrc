@@ -1,5 +1,9 @@
 {
-  "presets": ["@babel/env"],
+  "presets": [
+    ["@babel/env", { "targets": {
+      "node": "current" // or '7.10.0'
+    } }]
+  ],
   "plugins": [
     ["@babel/proposal-decorators", { "legacy": true }],
     ["@babel/proposal-class-properties", { "loose": true }]

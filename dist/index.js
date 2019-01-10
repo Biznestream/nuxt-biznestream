@@ -5,16 +5,17 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = SimpleModule;
 
-var _require = require('path'),
-    resolve = _require.resolve;
+const {
+  resolve
+} = require('path');
 
-var authSignInRoute = {
+const authSignInRoute = {
   name: 'auth-signin',
   path: '/auth/signin',
   chunkName: 'auth',
   component: resolve(__dirname, './pages/signin.vue')
 };
-var authCallbackRoute = {
+const authCallbackRoute = {
   name: 'auth-callback',
   path: '/auth/callback',
   chunkName: 'auth',
@@ -38,7 +39,7 @@ function SimpleModule(moduleOptions) {
     src: resolve(__dirname, './store/auth.js'),
     fileName: 'store/auth.js'
   });
-  this.extendRoutes(function (routes) {
+  this.extendRoutes(routes => {
     routes.unshift(authCallbackRoute);
     routes.unshift(authSignInRoute);
   });
