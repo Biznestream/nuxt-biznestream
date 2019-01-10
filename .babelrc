@@ -1,0 +1,7 @@
+{
+  "presets": ["@babel/env"],
+  "plugins": [
+    ["@babel/proposal-decorators", { "legacy": true }],
+    ["@babel/proposal-class-properties", { "loose": true }]
+  ]
+}
