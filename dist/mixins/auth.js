@@ -1,21 +1,4 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _vue = _interopRequireDefault(require("vue"));
-
-var _vuePropertyDecorator = require("vue-property-decorator");
-
-var _nuxtClassComponent = _interopRequireWildcard(require("nuxt-class-component"));
-
 var _dec, _dec2, _class, _class2, _descriptor, _temp;
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _initializerDefineProperty(target, property, descriptor, context) { if (!descriptor) return; Object.defineProperty(target, property, { enumerable: descriptor.enumerable, configurable: descriptor.configurable, writable: descriptor.writable, value: descriptor.initializer ? descriptor.initializer.call(context) : void 0 }); }
 
@@ -23,11 +6,14 @@ function _applyDecoratedDescriptor(target, property, decorators, descriptor, con
 
 function _initializerWarningHelper(descriptor, context) { throw new Error('Decorating class property failed. Please ensure that ' + 'proposal-class-properties is enabled and set to use loose mode. ' + 'To use proposal-class-properties in spec mode with decorators, wait for ' + 'the next major version of decorators in stage 2.'); }
 
+import Vue from 'vue';
+import { Watch } from 'vue-property-decorator';
+import Component, { namespace } from 'nuxt-class-component';
 const BIZNESTREAM_NAMESPACE = 'bzstrm';
 const {
   Mutation
-} = (0, _nuxtClassComponent.namespace)(BIZNESTREAM_NAMESPACE);
-let AuthMixin = (_dec = (0, _vuePropertyDecorator.Watch)('searchCompaniesQuery'), _dec2 = (0, _vuePropertyDecorator.Watch)('selectedCompany'), (0, _nuxtClassComponent.default)(_class = (_class2 = (_temp = class AuthMixin extends _vue.default {
+} = namespace(BIZNESTREAM_NAMESPACE);
+let AuthMixin = (_dec = Watch('searchCompaniesQuery'), _dec2 = Watch('selectedCompany'), Component(_class = (_class2 = (_temp = class AuthMixin extends Vue {
   constructor(...args) {
     super(...args);
 
@@ -113,4 +99,4 @@ let AuthMixin = (_dec = (0, _vuePropertyDecorator.Watch)('searchCompaniesQuery')
   writable: true,
   initializer: null
 }), _applyDecoratedDescriptor(_class2.prototype, "onSearchCompaniesQuery", [_dec], Object.getOwnPropertyDescriptor(_class2.prototype, "onSearchCompaniesQuery"), _class2.prototype), _applyDecoratedDescriptor(_class2.prototype, "onCompanyChange", [_dec2], Object.getOwnPropertyDescriptor(_class2.prototype, "onCompanyChange"), _class2.prototype)), _class2)) || _class);
-exports.default = AuthMixin;
+export { AuthMixin as default };
