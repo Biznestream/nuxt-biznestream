@@ -25,10 +25,6 @@ export default function SimpleModule (moduleOptions) {
     src: resolve(__dirname, './plugins/encryption/masterPasswordRequest.vue'),
     fileName: 'encryption/masterPasswordRequest.vue'
   });
-  this.addTemplate({
-    src: resolve(__dirname, './store/auth.js'),
-    fileName: 'store/auth.js'
-  });
 
   this.extendRoutes(routes => {
     routes.unshift(authCallbackRoute);

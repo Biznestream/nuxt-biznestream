@@ -1,7 +1,18 @@
 import Vue from 'vue';
 import masterPasswordRequest from './encryption/masterPasswordRequest.vue';
 import forgotPrompt from './encryption/forgotPrompt.vue';
-import * as authModule from './store/auth';
+
+let authModule = {
+  namespaced: true,
+  state: () => ({
+    currentCompanyId: null
+  }),
+  mutations: {
+    setCurrentCompanyId (state, companyId) {
+      state.currentCompanyId = companyId;
+    }
+  }
+};
 
 const BIZNESTREAM_NAMESPACE = 'bzstrm';
 
@@ -257,7 +268,6 @@ class Cryptozoa {
 }
 
 export default ({ app, store }, inject) => {
-  authModule.namespaced = true;
   store.state[BIZNESTREAM_NAMESPACE] = authModule.state();
   store.registerModule(BIZNESTREAM_NAMESPACE, authModule);
   inject('encryption', new Cryptozoa(app));
