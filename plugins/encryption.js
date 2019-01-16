@@ -2,7 +2,6 @@ import Vue from 'vue';
 import masterPasswordRequest from './encryption/masterPasswordRequest.vue';
 import forgotPrompt from './encryption/forgotPrompt.vue';
 import * as authModule from './store/auth';
-import { mutations, state } from '../../bz-restaurants/.nuxt/store/auth';
 
 const BIZNESTREAM_NAMESPACE = 'bzstrm';
 
